@@ -1,5 +1,5 @@
 {
-  "name": "react-bootstrap-country-select",
+  "name": "@shoutout-labs/react-bootstrap-country-select",
   "version": "1.0.0",
   "description": "A country select component with flag icons for React Bootstrap.",
   "keywords": [
@@ -11,17 +11,22 @@
     "country dropdown"
   ],
   "license": "MIT",
-  "private": false,
-  "repository": "git@github.com:jaywilz/react-bootstrap-country-select.git",
-  "author": "Jason Wilson <jasoncwilson@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/shoutout-labs/react-bootstrap-country-select.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "author": "ShoutOUT Labs",
   "main": "dist/index.js",
   "dependencies": {
     "prop-types": "^15.7.2"
   },
   "peerDependencies": {
-    "react": ">=17.0.2",
+    "react": "^16.14.x|| ^17.x",
     "react-bootstrap": "^1.6.1",
-    "react-dom": ">=17.0.2"
+    "react-dom": "^16.14.x|| ^17.x"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.8",
