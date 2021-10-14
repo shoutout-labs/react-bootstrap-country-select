@@ -9,7 +9,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import ts from 'rollup-plugin-ts'; // supports declarations generation
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
-const outputFile = NODE_ENV === 'examples' ? './docs/js/examples-umd.js' : (NODE_ENV === 'production' ? './dist/index.js' : './dist/dev.js');
+const outputFile = NODE_ENV === 'examples' ? './docs/js/examples-umd.js' : (NODE_ENV === 'production' ? './dist/index.js' : './dist/index.js');
 
 export default {
   input: './src/index.ts',
