@@ -62,7 +62,8 @@
     "build": "set BABEL_ENV=build && set NODE_ENV=production && rollup -c",
     "test": "cross-env BABEL_ENV=test NODE_ENV=test jest --no-cache",
     "build:examples-umd": "BABEL_ENV=build NODE_ENV=examples rollup -c",
-    "build:pages": "node_modules/@babel/cli/bin/babel.js docs/js/examples.src.js --out-file docs/js/examples.js --presets=@babel/preset-env,@babel/preset-react"
+    "build:pages": "node_modules/@babel/cli/bin/babel.js docs/js/examples.src.js --out-file docs/js/examples.js --presets=@babel/preset-env,@babel/preset-react",
+    "prepare": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
