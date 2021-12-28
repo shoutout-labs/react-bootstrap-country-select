@@ -1,18 +1,18 @@
 /**
  * MIT License
- *
+ * 
  * Copyright (c) 2020 Jay Wilson
- *
+ * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- *
+ * 
  * The above copyright notice and this permission notice shall be included in all
  * copies or substantial portions of the Software.
- *
+ * 
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -26,7 +26,7 @@
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('react'), require('react-dom')) :
     typeof define === 'function' && define.amd ? define(['react', 'react-dom'], factory) :
     (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.ReactBootstrapCountrySelect = factory(global.React, global.ReactDOM));
-}(this, (function (React, ReactDOM) { 'use strict';
+})(this, (function (React, ReactDOM) { 'use strict';
 
     function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -78,11 +78,11 @@
                 ar[i] = from[i];
             }
         }
-        return to.concat(ar || from);
+        return to.concat(ar || Array.prototype.slice.call(from));
     }
 
-    function _extends() {
-      _extends = Object.assign || function (target) {
+    function _extends$1() {
+      _extends$1 = Object.assign || function (target) {
         for (var i = 1; i < arguments.length; i++) {
           var source = arguments[i];
 
@@ -96,10 +96,10 @@
         return target;
       };
 
-      return _extends.apply(this, arguments);
+      return _extends$1.apply(this, arguments);
     }
 
-    function _objectWithoutPropertiesLoose(source, excluded) {
+    function _objectWithoutPropertiesLoose$1(source, excluded) {
       if (source == null) return {};
       var target = {};
       var sourceKeys = Object.keys(source);
@@ -192,7 +192,7 @@
       _setPrototypeOf(subClass, superClass);
     }
 
-    var ThemeContext = /*#__PURE__*/React__default['default'].createContext({});
+    var ThemeContext = /*#__PURE__*/React__default["default"].createContext({});
     ThemeContext.Consumer;
         ThemeContext.Provider;
 
@@ -1298,7 +1298,7 @@
       exitActive: propTypes$1.string
     })]) ;
 
-    var TransitionGroupContext = React__default['default'].createContext(null);
+    var TransitionGroupContext = React__default["default"].createContext(null);
 
     var UNMOUNTED = 'unmounted';
     var EXITED = 'exited';
@@ -1536,7 +1536,7 @@
         var enter = this.props.enter;
         var appearing = this.context ? this.context.isMounting : mounting;
 
-        var _ref2 = this.props.nodeRef ? [appearing] : [ReactDOM__default['default'].findDOMNode(this), appearing],
+        var _ref2 = this.props.nodeRef ? [appearing] : [ReactDOM__default["default"].findDOMNode(this), appearing],
             maybeNode = _ref2[0],
             maybeAppearing = _ref2[1];
 
@@ -1574,7 +1574,7 @@
 
         var exit = this.props.exit;
         var timeouts = this.getTimeouts();
-        var maybeNode = this.props.nodeRef ? undefined : ReactDOM__default['default'].findDOMNode(this); // no exit animation skip right to EXITED
+        var maybeNode = this.props.nodeRef ? undefined : ReactDOM__default["default"].findDOMNode(this); // no exit animation skip right to EXITED
 
         if (!exit || config.disabled) {
           this.safeSetState({
@@ -1638,7 +1638,7 @@
 
       _proto.onTransitionEnd = function onTransitionEnd(timeout, handler) {
         this.setNextCallback(handler);
-        var node = this.props.nodeRef ? this.props.nodeRef.current : ReactDOM__default['default'].findDOMNode(this);
+        var node = this.props.nodeRef ? this.props.nodeRef.current : ReactDOM__default["default"].findDOMNode(this);
         var doesNotHaveTimeoutOrListener = timeout == null && !this.props.addEndListener;
 
         if (!node || doesNotHaveTimeoutOrListener) {
@@ -1683,19 +1683,19 @@
             _this$props.onExiting;
             _this$props.onExited;
             _this$props.nodeRef;
-            var childProps = _objectWithoutPropertiesLoose(_this$props, ["children", "in", "mountOnEnter", "unmountOnExit", "appear", "enter", "exit", "timeout", "addEndListener", "onEnter", "onEntering", "onEntered", "onExit", "onExiting", "onExited", "nodeRef"]);
+            var childProps = _objectWithoutPropertiesLoose$1(_this$props, ["children", "in", "mountOnEnter", "unmountOnExit", "appear", "enter", "exit", "timeout", "addEndListener", "onEnter", "onEntering", "onEntered", "onExit", "onExiting", "onExited", "nodeRef"]);
 
         return (
           /*#__PURE__*/
           // allows for nested Transitions
-          React__default['default'].createElement(TransitionGroupContext.Provider, {
+          React__default["default"].createElement(TransitionGroupContext.Provider, {
             value: null
-          }, typeof children === 'function' ? children(status, childProps) : React__default['default'].cloneElement(React__default['default'].Children.only(children), childProps))
+          }, typeof children === 'function' ? children(status, childProps) : React__default["default"].cloneElement(React__default["default"].Children.only(children), childProps))
         );
       };
 
       return Transition;
-    }(React__default['default'].Component);
+    }(React__default["default"].Component);
 
     Transition.contextType = TransitionGroupContext;
     Transition.propTypes = {
@@ -2097,7 +2097,7 @@
       }, [ref]);
     }
 
-    var _excluded$5 = ["className", "children"];
+    var _excluded$6 = ["className", "children"];
 
     var _fadeStyles;
     var defaultProps$1 = {
@@ -2108,28 +2108,29 @@
       appear: false
     };
     var fadeStyles = (_fadeStyles = {}, _fadeStyles[ENTERING] = 'show', _fadeStyles[ENTERED] = 'show', _fadeStyles);
-    var Fade = /*#__PURE__*/React__default['default'].forwardRef(function (_ref, ref) {
+    var Fade = /*#__PURE__*/React__default["default"].forwardRef(function (_ref, ref) {
       var className = _ref.className,
           children = _ref.children,
-          props = _objectWithoutPropertiesLoose(_ref, _excluded$5);
+          props = _objectWithoutPropertiesLoose$1(_ref, _excluded$6);
 
       var handleEnter = React.useCallback(function (node) {
         triggerBrowserReflow(node);
         if (props.onEnter) props.onEnter(node);
       }, [props]);
-      return /*#__PURE__*/React__default['default'].createElement(Transition, _extends({
+      return /*#__PURE__*/React__default["default"].createElement(Transition, _extends$1({
         ref: ref,
         addEndListener: transitionEndListener
       }, props, {
         onEnter: handleEnter
       }), function (status, innerProps) {
-        return /*#__PURE__*/React__default['default'].cloneElement(children, _extends({}, innerProps, {
+        return /*#__PURE__*/React__default["default"].cloneElement(children, _extends$1({}, innerProps, {
           className: classnames('fade', className, children.props.className, fadeStyles[status])
         }));
       });
     });
     Fade.defaultProps = defaultProps$1;
     Fade.displayName = 'Fade';
+    var Fade$1 = Fade;
 
     var rHyphen = /-(.)/g;
     function camelize(string) {
@@ -2138,7 +2139,7 @@
       });
     }
 
-    var _excluded$4 = ["className", "bsPrefix", "as"];
+    var _excluded$5 = ["className", "bsPrefix", "as"];
 
     var pascalCase = function pascalCase(str) {
       return str[0].toUpperCase() + camelize(str).slice(1);
@@ -2152,15 +2153,15 @@
           Component = _ref.Component,
           defaultProps = _ref.defaultProps;
 
-      var BsComponent = /*#__PURE__*/React__default['default'].forwardRef(function (_ref2, ref) {
+      var BsComponent = /*#__PURE__*/React__default["default"].forwardRef(function (_ref2, ref) {
         var className = _ref2.className,
             bsPrefix = _ref2.bsPrefix,
             _ref2$as = _ref2.as,
             Tag = _ref2$as === void 0 ? Component || 'div' : _ref2$as,
-            props = _objectWithoutPropertiesLoose(_ref2, _excluded$4);
+            props = _objectWithoutPropertiesLoose$1(_ref2, _excluded$5);
 
         var resolvedPrefix = useBootstrapPrefix(bsPrefix, prefix);
-        return /*#__PURE__*/React__default['default'].createElement(Tag, _extends({
+        return /*#__PURE__*/React__default["default"].createElement(Tag, _extends$1({
           ref: ref,
           className: classnames(className, resolvedPrefix)
         }, props));
@@ -2277,17 +2278,39 @@
       return placement.split('-')[0];
     }
 
-    function getBoundingClientRect(element) {
+    // import { isHTMLElement } from './instanceOf';
+    function getBoundingClientRect(element, // eslint-disable-next-line unused-imports/no-unused-vars
+    includeScale) {
+
       var rect = element.getBoundingClientRect();
+      var scaleX = 1;
+      var scaleY = 1; // FIXME:
+      // `offsetWidth` returns an integer while `getBoundingClientRect`
+      // returns a float. This results in `scaleX` or `scaleY` being
+      // non-1 when it should be for elements that aren't a full pixel in
+      // width or height.
+      // if (isHTMLElement(element) && includeScale) {
+      //   const offsetHeight = element.offsetHeight;
+      //   const offsetWidth = element.offsetWidth;
+      //   // Do not attempt to divide by 0, otherwise we get `Infinity` as scale
+      //   // Fallback to 1 in case both values are `0`
+      //   if (offsetWidth > 0) {
+      //     scaleX = rect.width / offsetWidth || 1;
+      //   }
+      //   if (offsetHeight > 0) {
+      //     scaleY = rect.height / offsetHeight || 1;
+      //   }
+      // }
+
       return {
-        width: rect.width,
-        height: rect.height,
-        top: rect.top,
-        right: rect.right,
-        bottom: rect.bottom,
-        left: rect.left,
-        x: rect.left,
-        y: rect.top
+        width: rect.width / scaleX,
+        height: rect.height / scaleY,
+        top: rect.top / scaleY,
+        right: rect.right / scaleX,
+        bottom: rect.bottom / scaleY,
+        left: rect.left / scaleX,
+        x: rect.left / scaleX,
+        y: rect.top / scaleY
       };
     }
 
@@ -2588,6 +2611,10 @@
       requiresIfExists: ['preventOverflow']
     };
 
+    function getVariation(placement) {
+      return placement.split('-')[1];
+    }
+
     var unsetSides = {
       top: 'auto',
       right: 'auto',
@@ -2614,6 +2641,7 @@
       var popper = _ref2.popper,
           popperRect = _ref2.popperRect,
           placement = _ref2.placement,
+          variation = _ref2.variation,
           offsets = _ref2.offsets,
           position = _ref2.position,
           gpuAcceleration = _ref2.gpuAcceleration,
@@ -2640,7 +2668,7 @@
         if (offsetParent === getWindow(popper)) {
           offsetParent = getDocumentElement(popper);
 
-          if (getComputedStyle(offsetParent).position !== 'static') {
+          if (getComputedStyle(offsetParent).position !== 'static' && position === 'absolute') {
             heightProp = 'scrollHeight';
             widthProp = 'scrollWidth';
           }
@@ -2649,14 +2677,14 @@
 
         offsetParent = offsetParent;
 
-        if (placement === top) {
+        if (placement === top || (placement === left || placement === right) && variation === end) {
           sideY = bottom; // $FlowFixMe[prop-missing]
 
           y -= offsetParent[heightProp] - popperRect.height;
           y *= gpuAcceleration ? 1 : -1;
         }
 
-        if (placement === left) {
+        if (placement === left || (placement === top || placement === bottom) && variation === end) {
           sideX = right; // $FlowFixMe[prop-missing]
 
           x -= offsetParent[widthProp] - popperRect.width;
@@ -2671,7 +2699,7 @@
       if (gpuAcceleration) {
         var _Object$assign;
 
-        return Object.assign({}, commonStyles, (_Object$assign = {}, _Object$assign[sideY] = hasY ? '0' : '', _Object$assign[sideX] = hasX ? '0' : '', _Object$assign.transform = (win.devicePixelRatio || 1) < 2 ? "translate(" + x + "px, " + y + "px)" : "translate3d(" + x + "px, " + y + "px, 0)", _Object$assign));
+        return Object.assign({}, commonStyles, (_Object$assign = {}, _Object$assign[sideY] = hasY ? '0' : '', _Object$assign[sideX] = hasX ? '0' : '', _Object$assign.transform = (win.devicePixelRatio || 1) <= 1 ? "translate(" + x + "px, " + y + "px)" : "translate3d(" + x + "px, " + y + "px, 0)", _Object$assign));
       }
 
       return Object.assign({}, commonStyles, (_Object$assign2 = {}, _Object$assign2[sideY] = hasY ? y + "px" : '', _Object$assign2[sideX] = hasX ? x + "px" : '', _Object$assign2.transform = '', _Object$assign2));
@@ -2699,6 +2727,7 @@
 
       var commonStyles = {
         placement: getBasePlacement(state.placement),
+        variation: getVariation(state.placement),
         popper: state.elements.popper,
         popperRect: state.rects.popper,
         gpuAcceleration: gpuAcceleration
@@ -3001,10 +3030,6 @@
       return clippingRect;
     }
 
-    function getVariation(placement) {
-      return placement.split('-')[1];
-    }
-
     function computeOffsets(_ref) {
       var reference = _ref.reference,
           element = _ref.element,
@@ -3090,11 +3115,10 @@
           padding = _options$padding === void 0 ? 0 : _options$padding;
       var paddingObject = mergePaddingObject(typeof padding !== 'number' ? padding : expandToHashMap(padding, basePlacements));
       var altContext = elementContext === popper ? reference : popper;
-      var referenceElement = state.elements.reference;
       var popperRect = state.rects.popper;
       var element = state.elements[altBoundary ? altContext : elementContext];
       var clippingClientRect = getClippingRect(isElement(element) ? element : element.contextElement || getDocumentElement(state.elements.popper), boundary, rootBoundary);
-      var referenceClientRect = getBoundingClientRect(referenceElement);
+      var referenceClientRect = getBoundingClientRect(state.elements.reference);
       var popperOffsets = computeOffsets({
         reference: referenceClientRect,
         element: popperRect,
@@ -3575,16 +3599,24 @@
       }
     }
 
+    function isElementScaled(element) {
+      var rect = element.getBoundingClientRect();
+      var scaleX = rect.width / element.offsetWidth || 1;
+      var scaleY = rect.height / element.offsetHeight || 1;
+      return scaleX !== 1 || scaleY !== 1;
+    } // Returns the composite rect of an element relative to its offsetParent.
     // Composite means it takes into account transforms as well as layout.
+
 
     function getCompositeRect(elementOrVirtualElement, offsetParent, isFixed) {
       if (isFixed === void 0) {
         isFixed = false;
       }
 
+      var isOffsetParentAnElement = isHTMLElement(offsetParent);
+      isHTMLElement(offsetParent) && isElementScaled(offsetParent);
       var documentElement = getDocumentElement(offsetParent);
       var rect = getBoundingClientRect(elementOrVirtualElement);
-      var isOffsetParentAnElement = isHTMLElement(offsetParent);
       var scroll = {
         scrollLeft: 0,
         scrollTop: 0
@@ -3691,7 +3723,10 @@
     var VALID_PROPERTIES = ['name', 'enabled', 'phase', 'fn', 'effect', 'requires', 'options'];
     function validateModifiers(modifiers) {
       modifiers.forEach(function (modifier) {
-        Object.keys(modifier).forEach(function (key) {
+        [].concat(Object.keys(modifier), VALID_PROPERTIES) // IE11-compatible replacement for `new Set(iterable)`
+        .filter(function (value, index, self) {
+          return self.indexOf(value) === index;
+        }).forEach(function (key) {
           switch (key) {
             case 'name':
               if (typeof modifier.name !== 'string') {
@@ -3704,6 +3739,8 @@
               if (typeof modifier.enabled !== 'boolean') {
                 console.error(format(INVALID_MODIFIER_ERROR, modifier.name, '"enabled"', '"boolean"', "\"" + String(modifier.enabled) + "\""));
               }
+
+              break;
 
             case 'phase':
               if (modifierPhases.indexOf(modifier.phase) < 0) {
@@ -3720,14 +3757,14 @@
               break;
 
             case 'effect':
-              if (typeof modifier.effect !== 'function') {
+              if (modifier.effect != null && typeof modifier.effect !== 'function') {
                 console.error(format(INVALID_MODIFIER_ERROR, modifier.name, '"effect"', '"function"', "\"" + String(modifier.fn) + "\""));
               }
 
               break;
 
             case 'requires':
-              if (!Array.isArray(modifier.requires)) {
+              if (modifier.requires != null && !Array.isArray(modifier.requires)) {
                 console.error(format(INVALID_MODIFIER_ERROR, modifier.name, '"requires"', '"array"', "\"" + String(modifier.requires) + "\""));
               }
 
@@ -3837,7 +3874,8 @@
         var isDestroyed = false;
         var instance = {
           state: state,
-          setOptions: function setOptions(options) {
+          setOptions: function setOptions(setOptionsAction) {
+            var options = typeof setOptionsAction === 'function' ? setOptionsAction(state.options) : setOptionsAction;
             cleanupModifierEffects();
             state.options = Object.assign({}, defaultOptions, state.options, options);
             state.scrollParents = {
@@ -4118,7 +4156,7 @@
           strategy = _ref3$strategy === void 0 ? 'absolute' : _ref3$strategy,
           _ref3$modifiers = _ref3.modifiers,
           modifiers = _ref3$modifiers === void 0 ? EMPTY_MODIFIERS : _ref3$modifiers,
-          config = _objectWithoutPropertiesLoose(_ref3, ["enabled", "placement", "strategy", "modifiers"]);
+          config = _objectWithoutPropertiesLoose$1(_ref3, ["enabled", "placement", "strategy", "modifiers"]);
 
       var popperInstanceRef = React.useRef();
       var update = React.useCallback(function () {
@@ -4184,7 +4222,7 @@
           return undefined;
         }
 
-        popperInstanceRef.current = createPopper(referenceElement, popperElement, _extends({}, config, {
+        popperInstanceRef.current = createPopper(referenceElement, popperElement, _extends$1({}, config, {
           placement: placement,
           strategy: strategy,
           modifiers: [].concat(modifiers, [ariaDescribedByModifier, updateModifier])
@@ -4194,7 +4232,7 @@
             popperInstanceRef.current.destroy();
             popperInstanceRef.current = undefined;
             setState(function (s) {
-              return _extends({}, s, {
+              return _extends$1({}, s, {
                 attributes: {},
                 styles: {
                   popper: initialPopperStyles(strategy)
@@ -4277,7 +4315,7 @@
 
     function safeFindDOMNode(componentOrElement) {
       if (componentOrElement && 'setState' in componentOrElement) {
-        return ReactDOM__default['default'].findDOMNode(componentOrElement);
+        return ReactDOM__default["default"].findDOMNode(componentOrElement);
       }
 
       return componentOrElement != null ? componentOrElement : null;
@@ -4423,31 +4461,31 @@
           _ref$popperConfig = _ref.popperConfig,
           popperConfig = _ref$popperConfig === void 0 ? {} : _ref$popperConfig;
       var modifiers = toModifierMap(popperConfig.modifiers);
-      return _extends({}, popperConfig, {
+      return _extends$1({}, popperConfig, {
         placement: placement,
         enabled: enabled,
         strategy: fixed ? 'fixed' : popperConfig.strategy,
-        modifiers: toModifierArray(_extends({}, modifiers, {
+        modifiers: toModifierArray(_extends$1({}, modifiers, {
           eventListeners: {
             enabled: enableEvents
           },
-          preventOverflow: _extends({}, modifiers.preventOverflow, {
-            options: containerPadding ? _extends({
+          preventOverflow: _extends$1({}, modifiers.preventOverflow, {
+            options: containerPadding ? _extends$1({
               padding: containerPadding
             }, (_modifiers$preventOve = modifiers.preventOverflow) == null ? void 0 : _modifiers$preventOve.options) : (_modifiers$preventOve2 = modifiers.preventOverflow) == null ? void 0 : _modifiers$preventOve2.options
           }),
           offset: {
-            options: _extends({
+            options: _extends$1({
               offset: offset
             }, (_modifiers$offset = modifiers.offset) == null ? void 0 : _modifiers$offset.options)
           },
-          arrow: _extends({}, modifiers.arrow, {
+          arrow: _extends$1({}, modifiers.arrow, {
             enabled: !!arrowElement,
-            options: _extends({}, (_modifiers$arrow = modifiers.arrow) == null ? void 0 : _modifiers$arrow.options, {
+            options: _extends$1({}, (_modifiers$arrow = modifiers.arrow) == null ? void 0 : _modifiers$arrow.options, {
               element: arrowElement
             })
           }),
-          flip: _extends({
+          flip: _extends$1({
             enabled: !!flip
           }, modifiers.flip)
         }))
@@ -4592,6 +4630,9 @@
           name: 'popoverArrowMargins',
           enabled: true,
           phase: 'main',
+          fn: function fn() {
+            return undefined;
+          },
           requiresIfExists: ['arrow'],
           effect: function effect(_ref2) {
             var state = _ref2.state;
@@ -4723,7 +4764,7 @@
 
     unwrapExports(all_1);
 
-    var _excluded$3 = ["as", "className", "type", "tooltip"];
+    var _excluded$4 = ["as", "className", "type", "tooltip"];
     var propTypes = {
       /**
        * Specify whether the feedback is for valid or invalid fields
@@ -4736,7 +4777,7 @@
       tooltip: propTypes$1.bool,
       as: propTypes$1.elementType
     };
-    var Feedback = /*#__PURE__*/React__default['default'].forwardRef( // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+    var Feedback = /*#__PURE__*/React__default["default"].forwardRef( // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
     function (_ref, ref) {
       var _ref$as = _ref.as,
           Component = _ref$as === void 0 ? 'div' : _ref$as,
@@ -4745,22 +4786,24 @@
           type = _ref$type === void 0 ? 'valid' : _ref$type,
           _ref$tooltip = _ref.tooltip,
           tooltip = _ref$tooltip === void 0 ? false : _ref$tooltip,
-          props = _objectWithoutPropertiesLoose(_ref, _excluded$3);
+          props = _objectWithoutPropertiesLoose$1(_ref, _excluded$4);
 
-      return /*#__PURE__*/React__default['default'].createElement(Component, _extends({}, props, {
+      return /*#__PURE__*/React__default["default"].createElement(Component, _extends$1({}, props, {
         ref: ref,
         className: classnames(className, type + "-" + (tooltip ? 'tooltip' : 'feedback'))
       }));
     });
     Feedback.displayName = 'Feedback';
     Feedback.propTypes = propTypes;
+    var Feedback$1 = Feedback;
 
-    var FormContext = /*#__PURE__*/React__default['default'].createContext({
+    var FormContext = /*#__PURE__*/React__default["default"].createContext({
       controlId: undefined
     });
+    var FormContext$1 = FormContext;
 
-    var _excluded$2 = ["bsPrefix", "bsCustomPrefix", "type", "size", "htmlSize", "id", "className", "isValid", "isInvalid", "plaintext", "readOnly", "custom", "as"];
-    var FormControl = /*#__PURE__*/React__default['default'].forwardRef(function (_ref, ref) {
+    var _excluded$3 = ["bsPrefix", "bsCustomPrefix", "type", "size", "htmlSize", "id", "className", "isValid", "isInvalid", "plaintext", "readOnly", "custom", "as"];
+    var FormControl = /*#__PURE__*/React__default["default"].forwardRef(function (_ref, ref) {
       var bsPrefix = _ref.bsPrefix,
           bsCustomPrefix = _ref.bsCustomPrefix,
           type = _ref.type,
@@ -4777,9 +4820,9 @@
           custom = _ref.custom,
           _ref$as = _ref.as,
           Component = _ref$as === void 0 ? 'input' : _ref$as,
-          props = _objectWithoutPropertiesLoose(_ref, _excluded$2);
+          props = _objectWithoutPropertiesLoose$1(_ref, _excluded$3);
 
-      var _useContext = React.useContext(FormContext),
+      var _useContext = React.useContext(FormContext$1),
           controlId = _useContext.controlId;
 
       var _ref2 = custom ? [bsCustomPrefix, 'custom'] : [bsPrefix, 'form-control'],
@@ -4812,7 +4855,7 @@
       }
 
       warning_1(controlId == null || !id, '`controlId` is ignored on `<FormControl>` when `id` is specified.') ;
-      return /*#__PURE__*/React__default['default'].createElement(Component, _extends({}, props, {
+      return /*#__PURE__*/React__default["default"].createElement(Component, _extends$1({}, props, {
         type: type,
         size: htmlSize,
         ref: ref,
@@ -4823,10 +4866,10 @@
     });
     FormControl.displayName = 'FormControl';
     var FormControl$1 = Object.assign(FormControl, {
-      Feedback: Feedback
+      Feedback: Feedback$1
     });
 
-    var _excluded$1 = ["bsPrefix", "size", "hasValidation", "className", "as"];
+    var _excluded$2 = ["bsPrefix", "size", "hasValidation", "className", "as"];
     var InputGroupAppend = createWithBsPrefix('input-group-append');
     var InputGroupPrepend = createWithBsPrefix('input-group-prepend');
     var InputGroupText = createWithBsPrefix('input-group-text', {
@@ -4834,13 +4877,13 @@
     });
 
     var InputGroupCheckbox = function InputGroupCheckbox(props) {
-      return /*#__PURE__*/React__default['default'].createElement(InputGroupText, null, /*#__PURE__*/React__default['default'].createElement("input", _extends({
+      return /*#__PURE__*/React__default["default"].createElement(InputGroupText, null, /*#__PURE__*/React__default["default"].createElement("input", _extends$1({
         type: "checkbox"
       }, props)));
     };
 
     var InputGroupRadio = function InputGroupRadio(props) {
-      return /*#__PURE__*/React__default['default'].createElement(InputGroupText, null, /*#__PURE__*/React__default['default'].createElement("input", _extends({
+      return /*#__PURE__*/React__default["default"].createElement(InputGroupText, null, /*#__PURE__*/React__default["default"].createElement("input", _extends$1({
         type: "radio"
       }, props)));
     };
@@ -4853,31 +4896,29 @@
      * @property {InputGroupRadio} Radio
      * @property {InputGroupCheckbox} Checkbox
      */
-    var InputGroup = /*#__PURE__*/React__default['default'].forwardRef(function (_ref, ref) {
+    var InputGroup = /*#__PURE__*/React__default["default"].forwardRef(function (_ref, ref) {
       var bsPrefix = _ref.bsPrefix,
           size = _ref.size,
           hasValidation = _ref.hasValidation,
           className = _ref.className,
           _ref$as = _ref.as,
           Component = _ref$as === void 0 ? 'div' : _ref$as,
-          props = _objectWithoutPropertiesLoose(_ref, _excluded$1);
+          props = _objectWithoutPropertiesLoose$1(_ref, _excluded$2);
 
       bsPrefix = useBootstrapPrefix(bsPrefix, 'input-group');
-      return /*#__PURE__*/React__default['default'].createElement(Component, _extends({
+      return /*#__PURE__*/React__default["default"].createElement(Component, _extends$1({
         ref: ref
       }, props, {
         className: classnames(className, bsPrefix, size && bsPrefix + "-" + size, hasValidation && 'has-validation')
       }));
     });
     InputGroup.displayName = 'InputGroup';
-
-    var InputGroupWithExtras = _extends({}, InputGroup, {
-      Text: InputGroupText,
-      Radio: InputGroupRadio,
-      Checkbox: InputGroupCheckbox,
-      Append: InputGroupAppend,
-      Prepend: InputGroupPrepend
-    });
+    InputGroup.Text = InputGroupText;
+    InputGroup.Radio = InputGroupRadio;
+    InputGroup.Checkbox = InputGroupCheckbox;
+    InputGroup.Append = InputGroupAppend;
+    InputGroup.Prepend = InputGroupPrepend;
+    var InputGroup$1 = InputGroup;
 
     var resolveContainerRef = function resolveContainerRef(ref) {
       var _ref;
@@ -4920,7 +4961,7 @@
      * Built on top of `Popper.js`, the overlay component is
      * great for custom tooltip overlays.
      */
-    var Overlay$1 = /*#__PURE__*/React__default['default'].forwardRef(function (props, outerRef) {
+    var Overlay$1 = /*#__PURE__*/React__default["default"].forwardRef(function (props, outerRef) {
       var flip = props.flip,
           offset = props.offset,
           placement = props.placement,
@@ -4957,7 +4998,7 @@
       })),
           styles = _usePopper.styles,
           attributes = _usePopper.attributes,
-          popper = _objectWithoutPropertiesLoose(_usePopper, ["styles", "attributes"]);
+          popper = _objectWithoutPropertiesLoose$1(_usePopper, ["styles", "attributes"]);
 
       if (props.show) {
         if (exited) setExited(false);
@@ -4985,13 +5026,13 @@
         return null;
       }
 
-      var child = props.children(_extends({}, popper, {
+      var child = props.children(_extends$1({}, popper, {
         show: !!props.show,
-        props: _extends({}, attributes.popper, {
+        props: _extends$1({}, attributes.popper, {
           style: styles.popper,
           ref: mergedRef
         }),
-        arrowProps: _extends({}, attributes.arrow, {
+        arrowProps: _extends$1({}, attributes.arrow, {
           style: styles.arrow,
           ref: attachArrowRef
         })
@@ -5003,7 +5044,7 @@
             onEnter = props.onEnter,
             onEntering = props.onEntering,
             onEntered = props.onEntered;
-        child = /*#__PURE__*/React__default['default'].createElement(Transition, {
+        child = /*#__PURE__*/React__default["default"].createElement(Transition, {
           "in": props.show,
           appear: true,
           onExit: onExit,
@@ -5015,7 +5056,7 @@
         }, child);
       }
 
-      return container ? /*#__PURE__*/ReactDOM__default['default'].createPortal(child, container) : null;
+      return container ? /*#__PURE__*/ReactDOM__default["default"].createPortal(child, container) : null;
     });
     Overlay$1.displayName = 'Overlay';
     Overlay$1.propTypes = {
@@ -5155,10 +5196,10 @@
       onExited: propTypes$1.func
     };
 
-    var _excluded = ["children", "transition", "popperConfig"],
+    var _excluded$1 = ["children", "transition", "popperConfig"],
         _excluded2 = ["props", "arrowProps", "show", "update", "forceUpdate", "placement", "state"];
     var defaultProps = {
-      transition: Fade,
+      transition: Fade$1,
       rootClose: false,
       show: false,
       placement: 'top'
@@ -5182,7 +5223,7 @@
           transition = _ref.transition,
           _ref$popperConfig = _ref.popperConfig,
           popperConfig = _ref$popperConfig === void 0 ? {} : _ref$popperConfig,
-          outerProps = _objectWithoutPropertiesLoose(_ref, _excluded);
+          outerProps = _objectWithoutPropertiesLoose$1(_ref, _excluded$1);
 
       var popperRef = React.useRef({});
 
@@ -5190,10 +5231,10 @@
           ref = _usePopperMarginModif[0],
           marginModifiers = _usePopperMarginModif[1];
 
-      var actualTransition = transition === true ? Fade : transition || null;
-      return /*#__PURE__*/React__default['default'].createElement(Overlay$1, _extends({}, outerProps, {
+      var actualTransition = transition === true ? Fade$1 : transition || null;
+      return /*#__PURE__*/React__default["default"].createElement(Overlay$1, _extends$1({}, outerProps, {
         ref: ref,
-        popperConfig: _extends({}, popperConfig, {
+        popperConfig: _extends$1({}, popperConfig, {
           modifiers: marginModifiers.concat(popperConfig.modifiers || [])
         }),
         transition: actualTransition
@@ -5207,7 +5248,7 @@
             _ref2.forceUpdate;
             var placement = _ref2.placement,
             state = _ref2.state,
-            props = _objectWithoutPropertiesLoose(_ref2, _excluded2);
+            props = _objectWithoutPropertiesLoose$1(_ref2, _excluded2);
 
         wrapRefs(overlayProps, arrowProps);
         var popper = Object.assign(popperRef.current, {
@@ -5216,7 +5257,7 @@
           placement: placement,
           outOfBoundaries: (state == null ? void 0 : (_state$modifiersData$ = state.modifiersData.hide) == null ? void 0 : _state$modifiersData$.isReferenceHidden) || false
         });
-        if (typeof overlay === 'function') return overlay(_extends({}, props, overlayProps, {
+        if (typeof overlay === 'function') return overlay(_extends$1({}, props, overlayProps, {
           placement: placement,
           show: show
         }, !transition && show && {
@@ -5225,12 +5266,12 @@
           popper: popper,
           arrowProps: arrowProps
         }));
-        return /*#__PURE__*/React__default['default'].cloneElement(overlay, _extends({}, props, overlayProps, {
+        return /*#__PURE__*/React__default["default"].cloneElement(overlay, _extends$1({}, props, overlayProps, {
           placement: placement,
           arrowProps: arrowProps,
           popper: popper,
           className: classnames(overlay.props.className, !transition && show && 'show'),
-          style: _extends({}, overlay.props.style, overlayProps.style)
+          style: _extends$1({}, overlay.props.style, overlayProps.style)
         }));
       });
     }
@@ -7239,7 +7280,7 @@
             var _a;
             return (__assign(__assign({}, acc), (_a = {}, _a[id] = true, _a)));
         }, {});
-        return __spreadArray(__spreadArray([], countries.filter(function (c) { return excluded[c.id] === undefined; })), (additions || []));
+        return __spreadArray(__spreadArray([], countries.filter(function (c) { return excluded[c.id] === undefined; }), true), (additions || []), true);
     };
     var filter = function (matchNameFromStart, matchAbbreviations) { return function (inputText) {
         var regex = new RegExp("" + (matchNameFromStart ? '^' : '') + inputText, 'i');
@@ -7253,11 +7294,11 @@
                 return regex.test(name);
             };
     }; };
-    var getInitialList = function (countries, sort) { return sort ? __spreadArray([], countries.sort(sort)) : __spreadArray([], countries); };
+    var getInitialList = function (countries, sort) { return sort ? __spreadArray([], countries.sort(sort), true) : __spreadArray([], countries, true); };
     var getUpdatedList = function (inputText, list, activeListItemIndex, countries, sort, matchNameFromStart, matchAbbreviations) {
         var currentActiveCountry = list[activeListItemIndex];
         var countryFilter = filter(matchNameFromStart, matchAbbreviations)(inputText);
-        var updatedList = sort ? __spreadArray([], countries.filter(countryFilter).sort(sort)) : __spreadArray([], countries.filter(countryFilter));
+        var updatedList = sort ? __spreadArray([], countries.filter(countryFilter).sort(sort), true) : __spreadArray([], countries.filter(countryFilter), true);
         var newActiveCountryIndex = -1;
         if (updatedList.length === 1) {
             newActiveCountryIndex = 0;
@@ -7275,14 +7316,96 @@
     var removeEmojiFlag = function (str) { return str.replace(EMOJI_FLAG_REGEX, ''); };
     var classNames = function (items) { return items.filter(function (item) { return !!item; }).join(' '); };
 
+    function _extends() {
+      _extends = Object.assign || function (target) {
+        for (var i = 1; i < arguments.length; i++) {
+          var source = arguments[i];
+
+          for (var key in source) {
+            if (Object.prototype.hasOwnProperty.call(source, key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+
+        return target;
+      };
+
+      return _extends.apply(this, arguments);
+    }
+
+    function _objectWithoutPropertiesLoose(source, excluded) {
+      if (source == null) return {};
+      var target = {};
+      var sourceKeys = Object.keys(source);
+      var key, i;
+
+      for (i = 0; i < sourceKeys.length; i++) {
+        key = sourceKeys[i];
+        if (excluded.indexOf(key) >= 0) continue;
+        target[key] = source[key];
+      }
+
+      return target;
+    }
+
+    var _excluded = ["cdnSuffix", "cdnUrl", "countryCode", "style", "svg"];
+    var DEFAULT_CDN_URL = 'https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.4/flags/4x3/';
+    var DEFAULT_CDN_SUFFIX = 'svg'; // offset between uppercase ascii and regional indicator symbols
+
+    var OFFSET = 127397;
+    var ReactCountryFlag = function ReactCountryFlag(_ref) {
+      var _ref$cdnSuffix = _ref.cdnSuffix,
+          cdnSuffix = _ref$cdnSuffix === void 0 ? DEFAULT_CDN_SUFFIX : _ref$cdnSuffix,
+          _ref$cdnUrl = _ref.cdnUrl,
+          cdnUrl = _ref$cdnUrl === void 0 ? DEFAULT_CDN_URL : _ref$cdnUrl,
+          countryCode = _ref.countryCode,
+          style = _ref.style,
+          _ref$svg = _ref.svg,
+          svg = _ref$svg === void 0 ? false : _ref$svg,
+          props = _objectWithoutPropertiesLoose(_ref, _excluded);
+
+      if (typeof countryCode !== 'string') {
+        return null;
+      }
+
+      if (svg) {
+        var flagUrl = "" + cdnUrl + countryCode.toLowerCase() + "." + cdnSuffix;
+        return React.createElement("img", Object.assign({}, props, {
+          src: flagUrl,
+          style: _extends({
+            display: 'inline-block',
+            width: '1em',
+            height: '1em',
+            verticalAlign: 'middle'
+          }, style)
+        }));
+      }
+
+      var emoji = countryCode.toUpperCase().replace(/./g, function (_char) {
+        return String.fromCodePoint(_char.charCodeAt(0) + OFFSET);
+      });
+      return React.createElement("span", Object.assign({
+        role: "img"
+      }, props, {
+        style: _extends({
+          display: 'inline-block',
+          fontSize: '1em',
+          lineHeight: '1em',
+          verticalAlign: 'middle'
+        }, style)
+      }), emoji);
+    };
+
     var ListItem = React.forwardRef(function (_a, ref) {
-        var classPrefix = _a.classPrefix, country = _a.country, flag = _a.country.flag, active = _a.active, countryLabelFormatter = _a.countryLabelFormatter, flags = _a.flags, onClick = _a.onClick;
+        var classPrefix = _a.classPrefix, country = _a.country; _a.country.flag; var active = _a.active, countryLabelFormatter = _a.countryLabelFormatter, flags = _a.flags, onClick = _a.onClick;
         var className = classNames([
             classPrefix + "__list-item",
             active && 'active',
         ]);
-        return (React__default['default'].createElement("li", { className: className, onClick: onClick, ref: ref },
-            flags ? React__default['default'].createElement("span", { className: classPrefix + "__flag" }, flag) : null,
+        return (React__default["default"].createElement("li", { className: className, onClick: onClick, ref: ref },
+            flags ? React__default["default"].createElement("span", { className: classPrefix + "__flag" },
+                React__default["default"].createElement(ReactCountryFlag, { countryCode: country.alpha2, svg: true })) : null,
             countryLabelFormatter(country)));
     });
 
@@ -7309,7 +7432,7 @@
                     onActiveItemOverflow(overflowOffBottomAmount);
             }
         }, [containerEl, listEl, activeItemEl, onActiveItemOverflow]);
-        return (React__default['default'].createElement("ul", { className: classPrefix + "__list", ref: listEl }, list.map(function (country, itemIndex) { return (React__default['default'].createElement(ListItem, { key: country.alpha2, classPrefix: classPrefix, country: country, active: itemIndex === activeItemIndex, countryLabelFormatter: countryLabelFormatter, flags: flags, onClick: function () { return onItemClick(itemIndex); }, ref: itemIndex === activeItemIndex ? activeItemEl : undefined })); })));
+        return (React__default["default"].createElement("ul", { className: classPrefix + "__list", ref: listEl }, list.map(function (country, itemIndex) { return (React__default["default"].createElement(ListItem, { key: country.alpha2, classPrefix: classPrefix, country: country, active: itemIndex === activeItemIndex, countryLabelFormatter: countryLabelFormatter, flags: flags, onClick: function () { return onItemClick(itemIndex); }, ref: itemIndex === activeItemIndex ? activeItemEl : undefined })); })));
     };
 
     var OverlayContent = function (_a) {
@@ -7318,13 +7441,13 @@
         var handleAciveItemCutOff = function (overflowAmount) {
             el.current.scrollTop = el.current.scrollTop + overflowAmount;
         };
-        return (React__default['default'].createElement("div", { className: classPrefix + "__overlay-content", style: {
+        return (React__default["default"].createElement("div", { className: classPrefix + "__overlay-content", style: {
                 maxHeight: maxHeight + "px",
             }, ref: el },
             !(list.length >= 1) &&
-                React__default['default'].createElement("div", { className: classPrefix + "__no-matches" }, noMatchesText),
+                React__default["default"].createElement("div", { className: classPrefix + "__no-matches" }, noMatchesText),
             (list.length >= 1) &&
-                React__default['default'].createElement(List, { classPrefix: classPrefix, containerEl: el.current, list: list, activeItemIndex: activeListItemIndex, countryLabelFormatter: countryLabelFormatter, flags: flags, onItemClick: onListItemClick, onActiveItemOverflow: handleAciveItemCutOff })));
+                React__default["default"].createElement(List, { classPrefix: classPrefix, containerEl: el.current, list: list, activeItemIndex: activeListItemIndex, countryLabelFormatter: countryLabelFormatter, flags: flags, onItemClick: onListItemClick, onActiveItemOverflow: handleAciveItemCutOff })));
     };
 
     var DEFAULT_CLASS_PREFIX = 'country-select';
@@ -7346,7 +7469,7 @@
     };
     var init$1 = function (state, _a) {
         var combinedCountries = _a.combinedCountries;
-        return (__assign(__assign({}, state), { combinedCountries: combinedCountries, list: __spreadArray([], combinedCountries) }));
+        return (__assign(__assign({}, state), { combinedCountries: combinedCountries, list: __spreadArray([], combinedCountries, true) }));
     };
     var focus$1 = function (state) { return (__assign(__assign({}, state), { focused: true })); };
     var blur$1 = function (state) { return (__assign(__assign({}, state), { focused: false })); };
@@ -7358,8 +7481,8 @@
         var activeListItemIndex = _a.activeListItemIndex;
         return (__assign(__assign({}, state), { activeListItemIndex: activeListItemIndex }));
     };
-    var countrySelect$1 = function (state) { return (__assign(__assign({}, state), { inputText: '', list: __spreadArray([], state.combinedCountries), activeListItemIndex: -1 })); };
-    var clear$1 = function (state) { return (__assign(__assign({}, state), { inputText: '', list: __spreadArray([], state.combinedCountries), activeListItemIndex: -1 })); };
+    var countrySelect$1 = function (state) { return (__assign(__assign({}, state), { inputText: '', list: __spreadArray([], state.combinedCountries, true), activeListItemIndex: -1 })); };
+    var clear$1 = function (state) { return (__assign(__assign({}, state), { inputText: '', list: __spreadArray([], state.combinedCountries, true), activeListItemIndex: -1 })); };
     var reducer = function (state, action) {
         switch (action.type) {
             case INIT: return init$1(state, action);
@@ -7401,7 +7524,7 @@
     }); }; };
 
     var CountrySelect = function (_a) {
-        var value = _a.value, _b = _a.onChange, onChange = _b === void 0 ? function () { } : _b, onTextChange = _a.onTextChange, _c = _a.countries, countries = _c === void 0 ? __spreadArray([], COUNTRIES) : _c, exclusions = _a.exclusions, additions = _a.additions, _d = _a.valueAs, valueAs = _d === void 0 ? 'object' : _d, _e = _a.flags, flags = _e === void 0 ? true : _e, _f = _a.flush, flush = _f === void 0 ? true : _f, _g = _a.disabled, disabled = _g === void 0 ? false : _g, _h = _a.placeholder, placeholder = _h === void 0 ? 'Type or select country...' : _h, _j = _a.noMatchesText, noMatchesText = _j === void 0 ? 'No matches' : _j, size = _a.size, sort = _a.sort, // e.g. (c1, c2) => c1.name < c2.name ? -1 : (c1.name > c2.name ? 1 : 0),
+        var value = _a.value, _b = _a.onChange, onChange = _b === void 0 ? function () { } : _b, onTextChange = _a.onTextChange, _c = _a.countries, countries = _c === void 0 ? __spreadArray([], COUNTRIES, true) : _c, exclusions = _a.exclusions, additions = _a.additions, _d = _a.valueAs, valueAs = _d === void 0 ? 'object' : _d, _e = _a.flags, flags = _e === void 0 ? true : _e, _f = _a.flush, flush = _f === void 0 ? true : _f, _g = _a.disabled, disabled = _g === void 0 ? false : _g, _h = _a.placeholder, placeholder = _h === void 0 ? 'Type or select country...' : _h, _j = _a.noMatchesText, noMatchesText = _j === void 0 ? 'No matches' : _j, size = _a.size, sort = _a.sort, // e.g. (c1, c2) => c1.name < c2.name ? -1 : (c1.name > c2.name ? 1 : 0),
         _k = _a.matchNameFromStart, // e.g. (c1, c2) => c1.name < c2.name ? -1 : (c1.name > c2.name ? 1 : 0),
         matchNameFromStart = _k === void 0 ? true : _k, _l = _a.matchAbbreviations, matchAbbreviations = _l === void 0 ? false : _l, _m = _a.countryLabelFormatter, countryLabelFormatter = _m === void 0 ? function (_a) {
             var name = _a.name;
@@ -7476,20 +7599,20 @@
             classPrefix,
             flush && classPrefix + "--flush",
         ]);
-        return (React__default['default'].createElement("div", { className: classes },
-            React__default['default'].createElement(InputGroupWithExtras, { ref: inputGroupRef, className: classPrefix + "__input-group", size: size },
+        return (React__default["default"].createElement("div", { className: classes },
+            React__default["default"].createElement(InputGroup$1, { ref: inputGroupRef, className: classPrefix + "__input-group", size: size },
                 (!flush && flags) &&
-                    React__default['default'].createElement(InputGroupWithExtras.Prepend, null,
-                        React__default['default'].createElement(InputGroupWithExtras.Text, { className: classPrefix + "__input-group__flag" }, selectedCountry ? selectedCountry.flag : '')),
-                React__default['default'].createElement(FormControl$1, __assign({ ref: formControlRef, className: classPrefix + "__form-control", value: selectedCountry ? "" + (flush && flags ? selectedCountry.flag + '   ' : '') + selectedCountry.name : inputText, onKeyDown: handleKey, onChange: function (ev) { return inputChange(ev.target.value, ev); }, onFocus: handleFocus, onBlur: handleBlur, placeholder: placeholder, disabled: disabled, spellCheck: false, autoComplete: 'new-value' }, formControlProps))),
-            React__default['default'].createElement(Overlay, __assign({ target: inputGroupRef.current, rootClose: true, placement: 'bottom-start', show: focused && (!selectedCountry || !closeOnSelect), onHide: function () { }, transition: true }, overlayProps), function (_a) {
+                    React__default["default"].createElement(InputGroup$1.Prepend, null,
+                        React__default["default"].createElement(InputGroup$1.Text, { className: classPrefix + "__input-group__flag" }, selectedCountry ? selectedCountry.flag : '')),
+                React__default["default"].createElement(FormControl$1, __assign({ ref: formControlRef, className: classPrefix + "__form-control", value: selectedCountry ? "" + (flush && flags ? selectedCountry.flag + '   ' : '') + selectedCountry.name : inputText, onKeyDown: handleKey, onChange: function (ev) { return inputChange(ev.target.value, ev); }, onFocus: handleFocus, onBlur: handleBlur, placeholder: placeholder, disabled: disabled, spellCheck: false, autoComplete: 'new-value' }, formControlProps))),
+            React__default["default"].createElement(Overlay, __assign({ target: inputGroupRef.current, rootClose: true, placement: 'bottom-start', show: focused && (!selectedCountry || !closeOnSelect), onHide: function () { }, transition: true }, overlayProps), function (_a) {
                 _a.placement; _a.arrowProps; _a.show; _a.popper; var props = __rest(_a, ["placement", "arrowProps", "show", "popper"]);
-                return (React__default['default'].createElement("div", __assign({}, props, { style: __assign({ width: (width > 0) ? width + "px" : 'calc(100% - 10px)' }, props.style) }),
-                    React__default['default'].createElement(OverlayContent, { classPrefix: classPrefix, list: list, activeListItemIndex: activeListItemIndex, countryLabelFormatter: countryLabelFormatter, flags: flags, noMatchesText: noMatchesText, maxHeight: listMaxHeight, onListItemClick: select })));
+                return (React__default["default"].createElement("div", __assign({}, props, { style: __assign({ width: (width > 0) ? width + "px" : 'calc(100% - 10px)' }, props.style) }),
+                    React__default["default"].createElement(OverlayContent, { classPrefix: classPrefix, list: list, activeListItemIndex: activeListItemIndex, countryLabelFormatter: countryLabelFormatter, flags: flags, noMatchesText: noMatchesText, maxHeight: listMaxHeight, onListItemClick: select })));
             })));
     };
 
     return CountrySelect;
 
-})));
+}));
 //# sourceMappingURL=examples-umd.js.map
