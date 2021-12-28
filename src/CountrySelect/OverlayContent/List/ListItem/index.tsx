@@ -1,5 +1,5 @@
 import React, { forwardRef, Ref, ReactNode } from 'react';
-
+import ReactCountryFlag from "react-country-flag"
 import { classNames } from '../../../util';
 
 import ICountry from '../../../ICountry';
@@ -39,7 +39,7 @@ const ListItem = forwardRef(({
       ref={ref}
     >
               
-      {flags ? <span className={`${classPrefix}__flag`}>{flag}</span> : null}
+      {flags ? <span className={`${classPrefix}__flag`}><ReactCountryFlag countryCode={country.alpha2} svg /></span> : null}
   
       {countryLabelFormatter(country)}
   
